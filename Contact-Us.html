@@ -1,0 +1,101 @@
+<html>
+    <head>
+    
+        <link rel="stylesheet" type="text/css" href="addidas.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        
+        <title>Contact us</title>
+    </head>
+    
+    <body>
+        <div class="topNav">
+            
+            
+           <div class="logo">
+                <a href="adidas.html"><img src="on-site/adidaslogo.png"/></a>
+            </div>
+            
+            
+            <div class="topNavRight" style="float: right;">
+             <a href="about.html">About</a>
+            <a href="product.html">Product</a>
+                <a href="#"><i class="fas fa-search"></i></a>    
+            <a href="Contact-Us.html">Contact</a>
+    </div>
+         </div>
+        
+         <div class="contant" style="margin-top: 40px;padding-top: 80px;">
+        
+        <h1>CONTACT US</h1>
+        <div class="ConUs">
+        <form >
+         <input type="text" placeholder="Your Name."/>
+         <input type="text" placeholder="Email"/>
+         <textarea id="subject" name="subject" placeholder="Your Message" style="height:100px"></textarea>
+         <input type="button" value="sumbit" style="background-color: #111;color:#fff;"/>
+        </form>
+        </div>
+        
+        <div id="map"> </div>
+         </div>
+        
+        
+        
+        <div class="footer">
+            
+            <div>
+                
+             <p>Ahmed Ali &copy; 2018</p>
+            </div>
+            
+       
+        
+        </div>
+<script>
+    
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 15
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+        
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG4zpis0NZf2emdYr4U2_Wyc1KTAcipjA&callback=initMap"
+  type="text/javascript"></script>
+
+
+    </body>
+</html>
